@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Models\Editor;
+use App\Http\Controllers\Controller;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class EditorController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class EditorController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Editor $editor)
+    public function show(Genre $genre)
     {
         //
     }
@@ -42,7 +43,7 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Editor $editor)
+    public function edit(Genre $genre)
     {
         //
     }
@@ -50,7 +51,7 @@ class EditorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Editor $editor)
+    public function update(Request $request, Genre $genre)
     {
         //
     }
@@ -58,7 +59,7 @@ class EditorController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Editor $editor)
+    public function destroy(Genre $genre)
     {
         //
     }

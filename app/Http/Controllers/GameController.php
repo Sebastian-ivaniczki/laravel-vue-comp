@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -11,7 +13,9 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $games = Game::orderBy('updated_at', 'DESC')->get();
+
+        return response()->json($games);
     }
 
     /**

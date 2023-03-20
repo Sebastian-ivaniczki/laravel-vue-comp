@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\EditorController;
+use App\Http\Controllers\admin\GameController;
+use App\Http\Controllers\admin\GenreController;
 use App\Http\Controllers\admin\HomeController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +28,9 @@ Route::get('/', function () {
 //route
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::resource('/games', GameController::class);
+    Route::resource('/editors', EditorController::class);
+    Route::resource('/genres', GenreController::class);
 });
 
 Route::middleware('auth')->group(function () {

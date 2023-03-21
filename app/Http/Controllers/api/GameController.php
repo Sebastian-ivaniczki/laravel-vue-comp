@@ -14,7 +14,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::orderBy('updated_at', 'DESC')->get();
+        $games = Game::orderBy('updated_at', 'DESC')->with('editor', 'genres')->get();
 
         return response()->json($games);
     }
@@ -33,6 +33,8 @@ class GameController extends Controller
     public function show(string $id)
     {
         $games = Game::find($id);
+        $games->genres;
+        $games->editor;
         if (!$games) return response(null, 404);
         return response()->json($games);
     }

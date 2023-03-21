@@ -45,24 +45,24 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link @if (request()->routeis('admin.games*')) active @endif"
-                href="{{ route('admin.games.index') }}">{{ __('Games') }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/') }}">{{ __('Editor') }}</a>
-            </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @if (request()->routeis('admin.games*')) active @endif" 
+                              href="{{ route('admin.games.index') }}">{{ __('Games') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.editors.index')}}">{{ __('Editor') }}</a>
+                        </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('admin.genres.index') }}">{{ __('Genre') }}</a>
-            </li>
-          </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.genres.index') }}">{{ __('Genre') }}</a>
+                        </li>
+                    </ul>
 
           <!-- Right Side Of Navbar -->
           <ul class="navbar-nav ml-auto">

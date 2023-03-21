@@ -37,7 +37,7 @@
             <td>{{ $game->pusblished_year }}</td>
 
             {{-- game last update --}}
-            <td>{{ $game->updated_at }}</td>
+            <td>{{ $game->getDate() }}</td>
 
             {{-- game commands --}}
             <td class="d-flex justify-content-end align-items-center">

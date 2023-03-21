@@ -28,7 +28,6 @@ class Game extends Model
 
     public function getDate()
     {
-
         $carbon = Carbon::create($this->updated_at)->format('d-m-Y');
         return $carbon;
     }

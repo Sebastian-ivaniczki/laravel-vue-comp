@@ -18,7 +18,7 @@ class GameSeeder extends Seeder
             $game = new Game();
 
             $game->title = $faker->word();
-            $game->image = $faker->url();
+            $game->image =  $faker->imageUrl(640, 640, 'animals', true);
             $game->description = $faker->text(250);
             $game->pusblished_year = $faker->year();
 

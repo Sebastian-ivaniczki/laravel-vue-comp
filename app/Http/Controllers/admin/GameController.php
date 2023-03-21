@@ -95,8 +95,8 @@ class GameController extends Controller
         $game->update($data);
 
         // if genres are given, add to the game
-        // if (Arr::exists($data, 'genres')) $game->genres()->sync($data['genres']);
-        // else $game->genres()->detach();
+        if (Arr::exists($data, 'genres')) $game->genres()->sync($data['genres']);
+        else $game->genres()->detach();
 
         return to_route('admin.games.show', $game->id)->with('message', "$game->title updated succesfully.")->with('type', 'warning');
     }

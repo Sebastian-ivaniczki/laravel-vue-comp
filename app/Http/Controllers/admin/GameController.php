@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Game;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -12,7 +13,9 @@ class GameController extends Controller
      */
     public function index()
     {
-        return view('admin.games.index');
+        $games = Game::orderBy('updated_at', 'DESC')->get();
+
+        return view('admin.games.index', compact('games'));
     }
 
     /**

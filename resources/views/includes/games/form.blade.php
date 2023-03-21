@@ -75,7 +75,7 @@
   </div>
 
   {{-- # genres checkboxes --}}
-  {{-- <div class="col-6 d-flex align-items-center ms-5">
+  <div class="col-6 d-flex align-items-center ms-5">
     @foreach ($genres as $genre)
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="gen-{{ $genre->label }}" value="{{ $genre->id }}"
@@ -84,7 +84,7 @@
             style="background-color:{{ $genre->color }}">{{ $genre->label }}</span></label>
       </div>
     @endforeach
-  </div> --}}
+  </div>
 </div>
 
 <hr>

@@ -25,7 +25,11 @@
     <!-- game genres -->
     <div class="mb-2">
       <strong>Genres: </strong>
-      {{-- todo --}}
+      @forelse ($game->genres as $genre)
+        <span class="badge rounded-pill" style="background-color:{{ $genre->color }}">{{ $genre->label }}</span>
+      @empty
+        -
+      @endforelse
     </div>
 
     <!-- game links -->

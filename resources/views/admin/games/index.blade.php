@@ -36,7 +36,13 @@
             <td>{{ $game->editor?->label }}</td>
 
             {{-- game genres --}}
-            <td>todo pills</td>
+            <td>
+              @forelse ($game->genres as $genre)
+                <span class="badge rounded-pill" style="background-color:{{ $genre->color }}">{{ $genre->label }}</span>
+              @empty
+                -
+              @endforelse
+            </td>
 
             {{-- game description (little abstract) --}}
             <td>{{ $game->getAbstract() }}</td>

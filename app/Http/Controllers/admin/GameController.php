@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Game;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
@@ -25,7 +26,8 @@ class GameController extends Controller
     public function create()
     {
         $game = new Game;
-        return view('admin.games.create', compact('game'));
+        $genres = Genre::all();
+        return view('admin.games.create', compact('game', 'genres'));
     }
 
     /**
@@ -64,7 +66,8 @@ class GameController extends Controller
      */
     public function show(Game $game)
     {
-        return view('admin.games.show', compact('game'));
+        $genres = Genre::all();
+        return view('admin.games.show', compact('game', 'genres'));
     }
 
     /**
@@ -72,7 +75,8 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        return view('admin.games.edit', compact('game'));
+        $genres = Genre::all();
+        return view('admin.games.edit', compact('game', 'genres'));
     }
 
     /**

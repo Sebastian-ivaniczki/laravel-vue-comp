@@ -32,4 +32,12 @@ class Game extends Model
         $carbon = Carbon::create($this->updated_at)->format('d-m-Y');
         return $carbon;
     }
+
+    // get abstract for description
+    public function getAbstract()
+    {
+        $abstract = substr($this->description, 0, 25) . '...';
+
+        return $abstract;
+    }
 }

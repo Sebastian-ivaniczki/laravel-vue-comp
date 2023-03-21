@@ -28,16 +28,16 @@
         @forelse ($games as $game)
           <tr>
             {{-- game title --}}
-            <th scope="row">1</th>
+            <th scope="row" class="text-capitalize">{{ $game->title }}</th>
 
             {{-- game description (little abstract) --}}
-            <td>Mark</td>
+            <td>{{ $game->getAbstract() }}</td>
 
-            {{-- game published year --}}
-            <td>Otto</td>
+            {{-- game pu(s)blished year --}}
+            <td>{{ $game->pusblished_year }}</td>
 
             {{-- game last update --}}
-            <td>Otto</td>
+            <td>{{ $game->updated_at }}</td>
 
             {{-- game commands --}}
             <td class="d-flex justify-content-end align-items-center">

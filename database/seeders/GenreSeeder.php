@@ -14,13 +14,14 @@ class GenreSeeder extends Seeder
      */
     public function run(Generator $faker): void
     {
-        for ($i = 0; $i < 7; $i++) {
-            $genre = new Genre();
+        $genres = ['Action RPG', 'FPS arena', 'FPS', 'MMORPG', 'MOBA', 'Open world', 'Otome', 'Roguelike'];
+        foreach ($genres as $genreName) {
+            $newGenre = new Genre();
 
-            $genre->label = $faker->word();
-            $genre->color = $faker->hexColor();
+            $newGenre->label = $genreName;
+            $newGenre->color = $faker->hexColor();
 
-            $genre->save();
+            $newGenre->save();
         }
     }
 }

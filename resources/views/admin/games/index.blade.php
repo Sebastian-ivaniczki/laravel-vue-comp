@@ -42,7 +42,8 @@
             {{-- game commands --}}
             <td class="d-flex justify-content-end align-items-center">
               {{-- show link --}}
-              <a class="btn btn-sm btn-primary" href=""><i class="fa-solid fa-folder-open"></i></a>
+              <a class="btn btn-sm btn-primary" href="{{ route('admin.games.show', $game->id) }}"><i
+                  class="fa-solid fa-folder-open"></i></a>
 
               {{-- edit link --}}
               <a class="btn btn-sm btn-warning mx-2" href=""><i class="fa-solid fa-pen-to-square"></i></a>

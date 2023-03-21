@@ -76,7 +76,8 @@ class GameController extends Controller
     public function edit(Game $game)
     {
         $genres = Genre::all();
-        return view('admin.games.edit', compact('game', 'genres'));
+        $game_genres = $game->genres->pluck('id')->toArray();
+        return view('admin.games.edit', compact('game', 'genres', 'game_genres'));
     }
 
     /**

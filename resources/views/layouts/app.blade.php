@@ -58,7 +58,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Genre') }}</a>
+                            <a class="nav-link" href="{{ route('admin.genres.index') }}">{{ __('Genre') }}</a>
                         </li>
                     </ul>
 

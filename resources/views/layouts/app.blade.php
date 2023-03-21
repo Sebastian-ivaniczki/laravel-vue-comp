@@ -49,7 +49,8 @@
               <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('admin.games.index') }}">{{ __('Games') }}</a>
+              <a class="nav-link @if (request()->routeis('admin.games*')) active @endif"
+                href="{{ route('admin.games.index') }}">{{ __('Games') }}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/') }}">{{ __('Editor') }}</a>

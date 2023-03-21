@@ -18,6 +18,8 @@
       <thead>
         <tr>
           <th scope="col">Title</th>
+          <th scope="col">Editor</th>
+          <th scope="col">Genres</th>
           <th scope="col">Description</th>
           <th scope="col">Published year</th>
           <th scope="col">Last update</th>
@@ -29,6 +31,12 @@
           <tr>
             {{-- game title --}}
             <th scope="row" class="text-capitalize">{{ $game->title }}</th>
+
+            {{-- game editor --}}
+            <td>{{ $game->editor?->label }}</td>
+
+            {{-- game genres --}}
+            <td>todo pills</td>
 
             {{-- game description (little abstract) --}}
             <td>{{ $game->getAbstract() }}</td>

@@ -54,10 +54,15 @@
                   class="fa-solid fa-folder-open"></i></a>
 
               {{-- edit link --}}
-              <a class="btn btn-sm btn-warning mx-2" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+              <a class="btn btn-sm btn-warning mx-2" href="{{ route('admin.games.edit', $game->id) }}"><i
+                  class="fa-solid fa-pen-to-square"></i></a>
 
               {{-- destroy link --}}
-              <a class="btn btn-sm btn-danger" href=""><i class="fa-solid fa-trash"></i></a>
+              <form class="d-inline delete-form" action="{{ route('admin.games.destroy', $game->id) }}" method="post"
+                data-form="{{ $game->title }}">
+                @csrf @method('delete')
+                <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+              </form>
             </td>
           </tr>
         @empty
@@ -65,5 +70,11 @@
         @endforelse
       </tbody>
     </table>
+    <hr>
+    {{-- add new game button --}}
+    <div class="text-end">
+      <a class="btn btn-sm btn-success me-2" href="{{ route('admin.games.create') }}"><i
+          class="fa-solid fa-circle-plus"></i></a>
+    </div>
   </section>
 @endsection

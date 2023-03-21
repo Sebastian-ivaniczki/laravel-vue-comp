@@ -14,9 +14,10 @@
 
     {{-- game editor --}}
     <p><strong>Editor: </strong>{{ $game->editor?->label }}</p>
+    <p><strong>Published year: </strong>{{ $game->pusblished_year }}</p>
 
     <!-- game image -->
-    <div class="img-box mb-5"></div>
+    <div class="img-box mb-5" style="background-image: url('{{ $game->image }}')"></div>
 
     <!-- game content -->
     <p>{{ $game->description }}</p>
@@ -34,10 +35,15 @@
           class="fa-solid fa-circle-left"></i></a>
 
       {{-- edit link --}}
-      <a class="btn btn-sm btn-warning mx-2" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+      <a class="btn btn-sm btn-warning mx-2" href="{{ route('admin.games.edit', $game->id) }}"><i
+          class="fa-solid fa-pen-to-square"></i></a>
 
       {{-- destroy link --}}
-      <a class="btn btn-sm btn-danger" href=""><i class="fa-solid fa-trash"></i></a>
+      <form class="d-inline delete-form" action="{{ route('admin.games.destroy', $game->id) }}" method="post"
+        data-form="{{ $game->title }}">
+        @csrf @method('delete')
+        <button type="submit" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+      </form>
     </div>
   </section>
 @endsection

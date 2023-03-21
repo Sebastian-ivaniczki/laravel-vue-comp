@@ -20,3 +20,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/games', [GameController::class, 'index']);
+
+//route for details
+
+Route::get('/games/{game}', [GameController::class, 'show']);

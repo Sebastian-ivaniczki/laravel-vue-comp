@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Game extends Model
 {
@@ -28,8 +29,15 @@ class Game extends Model
 
     public function getDate()
     {
-
         $carbon = Carbon::create($this->updated_at)->format('d-m-Y');
         return $carbon;
+    }
+
+    // get abstract for description
+    public function getAbstract()
+    {
+        $abstract = substr($this->description, 0, 25) . '...';
+
+        return $abstract;
     }
 }

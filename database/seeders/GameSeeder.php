@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Editor;
 use App\Models\Game;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -14,6 +15,7 @@ class GameSeeder extends Seeder
      */
     public function run(Generator $faker): void
     {
+        $editors = Editor::all();
         $games = [
             [
                 'title' => 'Hogwarts Legacy',
@@ -58,7 +60,7 @@ class GameSeeder extends Seeder
             $newGame->image = $game['image'];
             $newGame->description = $game['description'];
             $newGame->pusblished_year = $game['pusblished_year'];
-
+            $newGame->editor_id = $editors->random()->id;
             $newGame->save();
         }
     }

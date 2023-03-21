@@ -54,11 +54,11 @@
                             <a class="nav-link" href="{{ url('/') }}">{{ __('Games') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Editor') }}</a>
+                            <a class="nav-link" href="{{ route('admin.editors.index') }}">{{ __('Editor') }}</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">{{ __('Genre') }}</a>
+                            <a class="nav-link" href="{{ route('admin.genres.index') }}">{{ __('Genre') }}</a>
                         </li>
                     </ul>
 

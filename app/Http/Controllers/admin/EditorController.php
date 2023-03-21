@@ -13,7 +13,8 @@ class EditorController extends Controller
      */
     public function index()
     {
-        //
+        $editors = Editor::all();
+        return view('admin.editors.index', compact('editors'));
     }
 
     /**
@@ -21,7 +22,8 @@ class EditorController extends Controller
      */
     public function create()
     {
-        //
+        $editor = new Editor();
+        return view('admin.editors.create', compact('editor'));
     }
 
     /**
@@ -29,7 +31,12 @@ class EditorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $new_editor = new Editor();
+        $new_editor->fill($data);
+
+        $new_editor->save();
+        return to_route('admin.editors.index');
     }
 
     /**
@@ -45,7 +52,7 @@ class EditorController extends Controller
      */
     public function edit(Editor $editor)
     {
-        //
+        return view('admin.editors.edit', compact('editor'));
     }
 
     /**
@@ -53,7 +60,9 @@ class EditorController extends Controller
      */
     public function update(Request $request, Editor $editor)
     {
-        //
+        $data = $request->all();
+        $editor->update($data);
+        return to_route('admin.editors.index');
     }
 
     /**
@@ -61,6 +70,7 @@ class EditorController extends Controller
      */
     public function destroy(Editor $editor)
     {
-        //
+        $editor->delete();
+        return to_route('admin.editors.index');
     }
 }

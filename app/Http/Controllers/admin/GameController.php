@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Editor;
 use App\Models\Game;
 use App\Models\Genre;
 use Illuminate\Http\Request;
@@ -26,8 +27,9 @@ class GameController extends Controller
     public function create()
     {
         $game = new Game;
+        $editors = Editor::all();
         $genres = Genre::all();
-        return view('admin.games.create', compact('game', 'genres'));
+        return view('admin.games.create', compact('game', 'genres', 'editors'));
     }
 
     /**
@@ -76,8 +78,9 @@ class GameController extends Controller
     public function edit(Game $game)
     {
         $genres = Genre::all();
+        $editors = Editor::all();
         $game_genres = $game->genres->pluck('id')->toArray();
-        return view('admin.games.edit', compact('game', 'genres', 'game_genres'));
+        return view('admin.games.edit', compact('game', 'genres', 'game_genres', 'editors'));
     }
 
     /**

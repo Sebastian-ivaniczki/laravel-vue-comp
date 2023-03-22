@@ -25,7 +25,7 @@
   </div>
 
   {{-- # editor select --}}
-  {{-- <div class="col-3 mb-3">
+  <div class="col-3 mb-3">
     <label for="editor_id" class="form-label">Editor</label>
     <select class="form-select @error('editor_id') is-invalid @enderror" id="editor_id" name="editor_id">
       <option value="">None</option>
@@ -39,7 +39,7 @@
     @else
       <div class="form-text">Select an Editor</div>
     @enderror
-  </div> --}}
+  </div>
 
 
   {{-- image --}}
@@ -68,10 +68,10 @@
   {{-- published year --}}
   <div class="col-3">
     <div class="my-3">
-      <label for="pusblished_year" class="form-label">pusblished_year:</label>
+      <label for="pusblished_year" class="form-label">Pusblished Year:</label>
       <input type="number" step="1" min="1901"
-        value="{{ old('pusblished_year', $game->pusblished_year ?? '1901') }}" class="form-control" id="pusblished_year"
-        name="pusblished_year">
+        value="{{ old('pusblished_year', $game->pusblished_year ?? '1901') }}" class="form-control"
+        id="pusblished_year" name="pusblished_year">
     </div>
   </div>
 

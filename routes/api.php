@@ -26,3 +26,5 @@ Route::get('/games', [GameController::class, 'index']);
 Route::get('/games/{game}', [GameController::class, 'show']);
 
 Route::get('/editor/{id}/games', [GameController::class, 'editorGamesIndex']);
+
+Route::post('/contact-mail', [GameController::class, 'send']);

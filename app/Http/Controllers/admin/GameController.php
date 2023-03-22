@@ -3,14 +3,26 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactMail;
 use App\Models\Editor;
 use App\Models\Game;
 use App\Models\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 
 class GameController extends Controller
 {
+
+    // public function testMail()
+    // {
+    //     $sender = 'ciccio@cazzi.com';
+    //     $subject = 'gran ciccio';
+    //     $message = 'vola lape maia';
+
+    //     $mail = new ContactMail($sender, $subject, $message);
+    //     Mail::to($sender)->send($mail);
+    // }
     /**
      * Display a listing of the resource.
      */

@@ -31,6 +31,8 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group
     Route::resource('/games', GameController::class);
     Route::resource('/editors', EditorController::class);
     Route::resource('/genres', GenreController::class);
+    //route for mail test
+    //Route::get('/ciccio', [GameController::class, 'testMail'])->name('ciccio');
 });
 
 Route::middleware('auth')->group(function () {

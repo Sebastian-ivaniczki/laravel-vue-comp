@@ -43,6 +43,8 @@ class GameController extends Controller
         // retrieve the input values
         $data = $request->all();
 
+        // dd($data);
+
         // create a new game
         $game = new Game();
 

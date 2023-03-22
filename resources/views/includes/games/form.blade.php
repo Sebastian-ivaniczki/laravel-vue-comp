@@ -75,6 +75,16 @@
     </div>
   </div>
 
+  {{-- sell_price --}}
+  <div class="col-3">
+    <div class="my-3">
+      <label for="sell_price" class="form-label">Price:</label>
+      <input type="number" step="0.01" min="10.00" max="90.00"
+        value="{{ old('sell_price', $game->sell_price ?? '10.00') }}" class="form-control" id="sell_price"
+        name="sell_price">
+    </div>
+  </div>
+
   {{-- # genres checkboxes --}}
   <div class="col-6 d-flex align-items-center ms-5">
     @foreach ($genres as $genre)

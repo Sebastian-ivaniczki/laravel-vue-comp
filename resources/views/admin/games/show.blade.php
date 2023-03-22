@@ -31,6 +31,10 @@
       @empty
         -
       @endforelse
+
+      <strong class="ms-5 me-2">Links: </strong>
+      <a class="btn btn-sm btn-danger" href="{{ $game->video_trailer }}" target="_blank"
+        title="View trailer in new window"><i class="fa-brands fa-youtube"></i></a>
     </div>
 
     <!-- game links -->

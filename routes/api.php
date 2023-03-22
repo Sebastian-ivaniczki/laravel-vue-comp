@@ -24,3 +24,5 @@ Route::get('/games', [GameController::class, 'index']);
 //route for details
 
 Route::get('/games/{game}', [GameController::class, 'show']);
+
+Route::get('/editor/{id}/games', [GameController::class, 'editorGamesIndex']);

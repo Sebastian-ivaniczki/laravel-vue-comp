@@ -14,6 +14,8 @@ class Game extends Model
     // fillable
     protected $fillable = ['title', 'description', 'image', 'pusblished_year', 'vote', 'sell_price', 'banner_image', 'video_trailer', 'editor_id'];
 
+    protected $with = ['genres'];
+
     // Relations
     public function editor()
     {

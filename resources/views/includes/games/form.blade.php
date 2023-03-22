@@ -12,7 +12,7 @@
   {{-- title --}}
   <div class="col-4">
     <div class="mb-3">
-      <label for="title" class="form-label">Title</label>
+      <label for="title" class="form-label">Title:</label>
       <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
         value="{{ old('title', $game->title) }}" required>
       @error('title')
@@ -25,7 +25,7 @@
 
   {{-- # editor select --}}
   <div class="col-3 mb-3">
-    <label for="editor_id" class="form-label">Editor</label>
+    <label for="editor_id" class="form-label">Editor:</label>
     <select class="form-select @error('editor_id') is-invalid @enderror" id="editor_id" name="editor_id">
       <option value="">None</option>
       @foreach ($editors as $editor)
@@ -44,13 +44,41 @@
   {{-- image --}}
   <div class="col-5">
     <div class="mb-3">
-      <label for="image" class="form-label">Image</label>
+      <label for="image" class="form-label">Image:</label>
       <input type="url" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
         value="{{ old('image', $game->image) }}">
       @error('image')
         <div class="invalid-feedback">{{ $message }}</div>
       @else
         <div class="form-text">Upload a game image</div>
+      @enderror
+    </div>
+  </div>
+
+  {{-- banner_image --}}
+  <div class="col-6">
+    <div class="mb-3">
+      <label for="banner_image" class="form-label">Banner:</label>
+      <input type="url" class="form-control @error('banner_image') is-invalid @enderror" id="banner_image"
+        name="banner_image" value="{{ old('banner_image', $game->banner_image) }}">
+      @error('banner_image')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @else
+        <div class="form-text">Upload a game banner</div>
+      @enderror
+    </div>
+  </div>
+
+  {{-- video_trailer --}}
+  <div class="col-6">
+    <div class="mb-3">
+      <label for="video_trailer" class="form-label">Trailer:</label>
+      <input type="url" class="form-control @error('video_trailer') is-invalid @enderror" id="video_trailer"
+        name="video_trailer" value="{{ old('video_trailer', $game->video_trailer) }}">
+      @error('video_trailer')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @else
+        <div class="form-text">Upload a game trailer</div>
       @enderror
     </div>
   </div>
@@ -94,7 +122,7 @@
   </div>
 
   {{-- # genres checkboxes --}}
-  <div class="col-6 d-flex align-items-center ms-5">
+  <div class="col-6 d-flex align-items-center mt-3">
     @foreach ($genres as $genre)
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="gen-{{ $genre->label }}" value="{{ $genre->id }}"

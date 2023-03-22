@@ -13,8 +13,9 @@
     <h1 class="text-center my-4">{{ $game->title }}</h1>
 
     {{-- game editor --}}
-    <p><strong>Editor: </strong>{{ $game->editor?->label }}</p>
-    <p><strong>Published year: </strong>{{ $game->pusblished_year }}</p>
+    <p><strong>Editor: </strong>{{ $game->editor?->label }} - <strong>Published year:
+      </strong>{{ $game->pusblished_year ?? 'Not defined' }}</p>
+    <p><strong>Price: </strong>{{ $game->sell_price ?? 'None' }} - <strong>Vote: </strong>{{ $game->vote ?? 'None' }}</p>
 
     <!-- game image -->
     <div class="img-box mb-5" style="background-image: url('{{ $game->image }}')"></div>

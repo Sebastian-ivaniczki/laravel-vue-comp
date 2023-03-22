@@ -1,10 +1,9 @@
 @if ($game->exists)
-  <form class="mb-5" action="{{ route('admin.games.update', $game->id) }}" method="post" enctype="multipart/form-data"
-    novalidate>
+  <form class="mb-5" action="{{ route('admin.games.update', $game->id) }}" method="post" enctype="multipart/form-data">
     {{-- * method helper --}}
     @method('PUT')
   @else
-    <form class="mb-5" action="{{ route('admin.games.store') }}" method="post" enctype="multipart/form-data" novalidate>
+    <form class="mb-5" action="{{ route('admin.games.store') }}" method="post" enctype="multipart/form-data">
 @endif
 {{-- ! cross-site request forgery --}}
 @csrf
@@ -82,6 +81,15 @@
       <input type="number" step="0.01" min="10.00" max="90.00"
         value="{{ old('sell_price', $game->sell_price ?? '10.00') }}" class="form-control" id="sell_price"
         name="sell_price">
+    </div>
+  </div>
+
+  {{-- vote --}}
+  <div class="col-3">
+    <div class="my-3">
+      <label for="vote" class="form-label">Vote:</label>
+      <input type="number" step="0.1" min="1" max="9"
+        value="{{ old('vote', $game->vote ?? '1.0') }}" class="form-control" id="vote" name="vote">
     </div>
   </div>
 

@@ -95,10 +95,10 @@
   {{-- published year --}}
   <div class="col-3">
     <div class="my-3">
-      <label for="pusblished_year" class="form-label">Pusblished Year:</label>
+      <label for="published_year" class="form-label">published Year:</label>
       <input type="number" step="1" min="1901"
-        value="{{ old('pusblished_year', $game->pusblished_year ?? '1901') }}" class="form-control"
-        id="pusblished_year" name="pusblished_year">
+        value="{{ old('published_year', $game->published_year ?? '1901') }}" class="form-control"
+        id="published_year" name="published_year">
     </div>
   </div>
 

@@ -14,7 +14,7 @@
 
     {{-- game editor --}}
     <p><strong>Editor: </strong>{{ $game->editor?->label }} - <strong>Published year:
-      </strong>{{ $game->pusblished_year ?? 'Not defined' }}</p>
+      </strong>{{ $game->published_year ?? 'Not defined' }}</p>
     <p><strong>Price: </strong>{{ $game->sell_price ?? 'None' }} - <strong>Vote: </strong>{{ $game->vote ?? 'None' }}</p>
 
     <!-- game image -->

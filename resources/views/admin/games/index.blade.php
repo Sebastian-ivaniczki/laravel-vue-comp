@@ -49,7 +49,7 @@
                         <td>{{ $game->getAbstract() }}</td>
 
                         {{-- game pu(s)blished year --}}
-                        <td>{{ $game->pusblished_year }}</td>
+                        <td>{{ $game->published_year }}</td>
 
                         {{-- game last update --}}
                         <td>{{ $game->getDate() }}</td>

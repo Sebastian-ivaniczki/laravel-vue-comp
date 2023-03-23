@@ -12,7 +12,7 @@ class Game extends Model
     use HasFactory;
 
     // fillable
-    protected $fillable = ['title', 'description', 'image', 'pusblished_year', 'vote', 'sell_price', 'banner_image', 'video_trailer', 'editor_id'];
+    protected $fillable = ['title', 'description', 'image', 'published_year', 'vote', 'sell_price', 'banner_image', 'video_trailer', 'editor_id'];
 
     protected $with = ['genres'];
 

@@ -29,7 +29,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::orderBy('updated_at', 'DESC')->with('editor', 'genres')->paginate(5);
+        $games = Game::orderBy('updated_at', 'DESC')->with('editor', 'genres')->paginate(10);
 
 
         return response()->json($games);
